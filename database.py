@@ -1,0 +1,22 @@
+TRAINING_DATABASE = [
+  ('eu sou admirada por muitos',False),
+  ('me sinto completamente amado',False),
+  ('amar e maravilhoso',False),
+  ('estou me sentindo muito animado novamente',False),
+  ('eu estou muito bem hoje',False),
+  ('que belo dia para dirigir um carro novo',False),
+  ('o dia está muito bonito',False),
+  ('estou contente com o resultado do teste que fiz no dia de ontem',False),
+  ('o amor e lindo',False),
+  ('nossa amizade e amor vai durar para sempre', False),
+  ('estou amedrontado', True),
+  ('ele esta me ameacando a dias', True),
+  ('isso me deixa apavorada', True),
+  ('este lugar e apavorante', True),
+  ('se perdermos outro jogo seremos eliminados e isso me deixa com pavor', True),
+  ('tome cuidado com o lobisomem', True),
+  ('se eles descobrirem estamos encrencados', True),
+  ('estou tremendo de medo', True),
+  ('eu tenho muito medo dele', True),
+  ('estou com medo do resultado dos meus testes', True)
+]
