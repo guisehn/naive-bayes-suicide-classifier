@@ -8,15 +8,42 @@ classifier.train(TRAINING_DATABASE)
 
 print('Pronto!')
 
-while True:
-  print('\nDigite uma frase (ou apenas enter para fechar o programa):')
-  phrase = input().strip()
+# True = suicida, False = não-suicida
+TEST_DATABASE = [
+  ('estou planejando me matar amanhã', True),
+  ('só queria sumir para sempre', True),
+  ('vou tomar uma cartela inteira de remédio para acabar logo com isso', True),
+  ('nada faz sentido nessa vida vazia', True),
+  ('será que se eu me entupir de paracetamol eu sumo desse planeta?', True),
+  ('quero me jogar do nono andar', True),
+  ('vou me matar', True),
+  ('vou te matar e depois cometer suicídio', True),
+  ('nada mais faz sentido na vida, me sinto um inútil', True),
+  ('queria dormir e nunca mais acordar', True),
+  ('quero morrer', True),
+  ('foi bom conhece-lo amigo, até mais', True),
+  ('eu não consigo mais aguentar tudo isso', True),
+  ('eu não pertenço mais a este mundo', True),
+  ('a vida não tem mais graça', True),
+  ('me sinto muito sozinho', True),
+  ('eu choro todo o dia pois minha vida é horrível', True),
 
-  if phrase != '':
-    result = classifier.is_suicidal(phrase)
-    print('Resultado: ' + ('Suicida' if result else 'Não-suicida'))
-  else:
-    print('Tchau!')
-    break
+  ('vou te matar', False), # intenção dessa frase é mostrar o tratamento feito na ordem das palavras
+  ('me sinto muito bem', False),
+  ('estou planejando viajar para o nordeste', False),
+  ('a economia do brasil vai mal', False),
+  ('o neymar é muito cai cai', False),
+  ('me ferrei na prova porque estudei pouco, espero que sirva de lição para mim mesmo no futuro', False),
+  ('amanhã eu vou jogar futebol com meus amigos, nunca mais joguei com eles', False),
+  ('no dia do lixo eu me entupi de hamburguer coca cola', False),
+  ('sexta-feira é dia de tomar uma gelada', False),
+  ('adoro ficar no meu quarto olhando televisão', False),
+  ('quero viver', False),
+  ('eu te amo muito, quero viver com você pra sempre', False),
+  ('pombos gostam de se alimentar na sombra das arvores', False),
+  ('raposas são criaturas assustadoras', False),
+  ('tenho medo de levantar sozinho pra tomar água no meio da noite', False)
+]
 
-
+accuracy = classifier.calculate_accuracy(TEST_DATABASE)
+print('Acurácia: ' + str(accuracy))
