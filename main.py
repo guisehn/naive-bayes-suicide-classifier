@@ -1,4 +1,5 @@
 from suicide_phrase_classifier import SuicidePhraseClassifier
+from report_generator import ReportGenerator
 from database import TRAINING_DATABASE
 
 print('Treinando...')
@@ -46,19 +47,6 @@ TEST_DATABASE = [
 ]
 
 print('\nResultado\n===================================')
-
-accuracy = classifier.calculate_accuracy(TEST_DATABASE)
-print('Acurácia: ' + str(accuracy * 100) + '%\n')
-
-confusion_matrix = classifier.mount_confusion_matrix(TEST_DATABASE, 'Suicida', 'Não-suicida')
-print('Matriz de confusão:\n' + str(confusion_matrix))
-
-if accuracy < 1:
-  print('Falhas na predição:')
-
-  for (phrase, expected_class) in TEST_DATABASE:
-    result = classifier.is_suicidal(phrase)
-    if result != expected_class:
-      print('\nFrase: ' + phrase)
-      print('Resultado do classificador: ' + ('Suicida' if result else 'Não-suicida'))
-      print('Esperado na base de testes: ' + ('Suicida' if expected_class else 'Não-suicida'))
+report_generator = ReportGenerator(classifier)
+report = report_generator.generate(TEST_DATABASE)
+print(report)
