@@ -176,5 +176,6 @@ TRAINING_DATABASE = [
   ('Nesse fim de semana coloquei o pé na jaca, me entupi de hamburguer e batata frita', False),
   ('Nossa, que bom jogar futebol novamente, eu nunca mais tinha jogado', False),
   ('A vaca foi beber água sozinha', False),
-  ('Bezerros desmamados choram na ausência de suas mães', False)
+  ('Bezerros desmamados choram na ausência de suas mães', False),
+  ('Preciso comprar remédio para os meus filhos', False)
 ]
