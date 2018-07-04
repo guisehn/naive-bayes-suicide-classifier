@@ -177,5 +177,6 @@ TRAINING_DATABASE = [
   ('Nossa, que bom jogar futebol novamente, eu nunca mais tinha jogado', False),
   ('A vaca foi beber água sozinha', False),
   ('Bezerros desmamados choram na ausência de suas mães', False),
-  ('Preciso comprar remédio para os meus filhos', False)
+  ('Preciso comprar remédio para os meus filhos', False),
+  ('Preciso tomar remédio para me curar dessa gripe', False)
 ]

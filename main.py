@@ -15,7 +15,7 @@ TEST_DATABASE = [
   ('só queria sumir para sempre', True),
   ('vou tomar uma cartela inteira de remédio para acabar logo com isso', True),
   ('nada faz sentido nessa vida vazia', True),
-  ('será que se eu me entupir de paracetamol eu sumo desse planeta?', True),
+  ('será que se eu me entupir de paracetamol eu consigo sumir desse planeta?', True),
   ('quero me jogar do nono andar', True),
   ('vou me matar', True),
   ('vou te matar e depois cometer suicídio', True),
