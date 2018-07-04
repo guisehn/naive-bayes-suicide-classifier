@@ -45,5 +45,20 @@ TEST_DATABASE = [
   ('tenho medo de levantar sozinho pra tomar água no meio da noite', False)
 ]
 
+print('\nResultado\n===================================')
+
 accuracy = classifier.calculate_accuracy(TEST_DATABASE)
-print('Acurácia: ' + str(accuracy))
+print('Acurácia: ' + str(accuracy * 100) + '%\n')
+
+confusion_matrix = classifier.mount_confusion_matrix(TEST_DATABASE, 'Suicida', 'Não-suicida')
+print('Matriz de confusão:\n' + str(confusion_matrix))
+
+if accuracy < 1:
+  print('Falhas na predição:')
+
+  for (phrase, expected_class) in TEST_DATABASE:
+    result = classifier.is_suicidal(phrase)
+    if result != expected_class:
+      print('\nFrase: ' + phrase)
+      print('Resultado do classificador: ' + ('Suicida' if result else 'Não-suicida'))
+      print('Esperado na base de testes: ' + ('Suicida' if expected_class else 'Não-suicida'))

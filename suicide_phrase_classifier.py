@@ -1,4 +1,5 @@
 import nltk
+from nltk.metrics import ConfusionMatrix
 import re
 import operator
 import unicodedata
@@ -99,6 +100,16 @@ class SuicidePhraseClassifier:
     test_database_features = nltk.classify.apply_features(extract_features, test_database)
 
     return nltk.classify.accuracy(self.classifier, test_database_features)
+
+  def mount_confusion_matrix(self, test_database, suicidal_label, non_suicidal_label):
+    result_list = []
+    expected_list = []
+    to_label = lambda result: suicidal_label if result else non_suicidal_label
+    for (phrase, expected_class) in test_database:
+      result = to_label(self.is_suicidal(phrase))
+      result_list.append(result)
+      expected_list.append(to_label(expected_class))
+    return ConfusionMatrix(expected_list, result_list, True)
 
   def is_suicidal(self, phrase):
     if self.classifier == None:
